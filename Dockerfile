@@ -1,4 +1,4 @@
-FROM node:lts-alpine3.18 AS build-env
+FROM 188635254879.dkr.ecr.us-east-1.amazonaws.com/myvocal.ai:node20 AS build-env
 
 RUN npm install pnpm -g
 
@@ -9,7 +9,7 @@ WORKDIR /app
 RUN pnpm install && \
     pnpm build
 
-FROM node:lts-alpine3.18
+FROM 188635254879.dkr.ecr.us-east-1.amazonaws.com/myvocal.ai:node20
 
 WORKDIR /app
 
