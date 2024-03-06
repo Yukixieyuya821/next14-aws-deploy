@@ -9,6 +9,8 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - echo Getting the version from package.json...
+      - IMAGE_TAG=$(jq -r '.version' package.json)
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
