@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  # 你可能需要将一些配置文件或脚本复制到EC2实例上
+  - source: scripts
+    destination: /home/next14-test
+  # 复制imagedefinitions.json文件
+  - source: imagedefinitions.json
+    destination: /home/next14-test
+hooks:
+  BeforeInstall:
+    - location: modify_permissions.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: deploy.sh
+      timeout: 300
+      runas: root
