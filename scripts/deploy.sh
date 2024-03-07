@@ -4,8 +4,8 @@ set -e
 # 登录到Amazon ECR
 aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${ECR_REPOSITORY_URI}
 
-CONTAINER_NAME=$(jq -r '.[0].name' imagedefinitions.json)
-IMAGE_URI=$(jq -r '.[0].imageUri' imagedefinitions.json)
+export CONTAINER_NAME=$(jq -r '.[0].name' imagedefinitions.json)
+export IMAGE_URI=$(jq -r '.[0].imageUri' imagedefinitions.json)
 
 echo "容器名称: $CONTAINER_NAME"
 echo "镜像URI: $IMAGE_URI"
