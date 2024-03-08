@@ -1,10 +1,11 @@
 version: 0.0
 os: linux
-#files:
-#  - source: /
-#    destination: /home/next14-test/
+files:
+  - source: /
+    destination: /home/next14-test
 hooks:
   ApplicationStart:
     - location: deploy.sh
       timeout: 300
       runas: root
+      cwd: /home/next14-test
