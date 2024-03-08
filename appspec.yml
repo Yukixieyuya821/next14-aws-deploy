@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   # 你可能需要将一些配置文件或脚本复制到EC2实例上
-  - source: scripts/deploy.sh
+  - source: deploy.sh
     destination: /home/next14-test/
   # 复制imagedefinitions.json文件
   - source: imagedefinitions.json
