@@ -1,6 +1,6 @@
 version: 0.0
 os: linux
-#files:
+files:
 #  # 你可能需要将一些配置文件或脚本复制到EC2实例上
   - source: /
     destination: /home/next14-test/
