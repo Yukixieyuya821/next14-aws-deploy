@@ -16,7 +16,7 @@ echo "容器名称: $CONTAINER_NAME"
 echo "镜像URI: $IMAGE_URI"
 
 # 拉取最新的镜像
-docker pull ${IMAGE_URI} >> $LOG_FILE 2>&1
+docker pull 188635254879.dkr.ecr.us-east-1.amazonaws.com/myvocal.ai:0.1.0 >> $LOG_FILE 2>&1
 
 # 使用docker-compose重启服务
 docker-compose down && docker-compose up -d >> $LOG_FILE 2>&1
