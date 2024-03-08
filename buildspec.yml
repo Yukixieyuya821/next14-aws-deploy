@@ -14,7 +14,7 @@ phases:
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
-      - chmod +x scripts/deploy.sh
+      - chmod +x deploy.sh
   post_build:
     commands:
       - echo Pushing the Docker image...
@@ -27,4 +27,4 @@ artifacts:
   files:
     - imagedefinitions.json
     - appspec.yml
-    - scripts/deploy.sh
+    - deploy.sh
