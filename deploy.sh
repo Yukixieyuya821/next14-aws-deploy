@@ -11,7 +11,7 @@ LOG_FILE="/home/next14-test/deploy.log"
 AWS_DEFAULT_REGION=$(jq -r '.[0].region' config.json)
 ECR_REPOSITORY_URI=$(jq -r '.[0].repositoryUri' config.json)
 CONTAINER_NAME=$(jq -r '.[0].name' config.json)
-IMAGE_URI=$(jq -r '.[0].imageUri' config.json)
+export IMAGE_URI=$(jq -r '.[0].imageUri' config.json)
 
 echo "AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION" >> $LOG_FILE
 echo "ECR_REPOSITORY_URI=$ECR_REPOSITORY_URI" >> $LOG_FILE
