@@ -9,6 +9,6 @@ files:
 #    destination: /home/next14-test/
 hooks:
   ApplicationStart:
-    - location: deploy.sh
+    - location: /home/next14-test/deploy.sh
       timeout: 300
       runas: root
