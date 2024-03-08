@@ -21,10 +21,10 @@ phases:
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
-      - printf '[{"name":"next14-test","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"next14-test","imageUri":"%s", "region":"%s","repositoryUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG $AWS_DEFAULT_REGION $ECR_REPOSITORY_URI > config.json
       - echo Build completed on `date`
 artifacts:
   files:
-    - imagedefinitions.json
+    - config.json
     - appspec.yml
     - deploy.sh
