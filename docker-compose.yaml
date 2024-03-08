@@ -1,0 +1,13 @@
+version: '3.0'
+services:
+  next14-test:
+    network_mode: "host"
+    image: "${IMAGE_URI}"
+    container_name: next14-test
+    restart: always
+    logging:
+      options:
+        max-size: "100m"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro

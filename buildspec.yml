@@ -28,3 +28,4 @@ artifacts:
     - config.json
     - appspec.yml
     - deploy.sh
+    - docker-compose.yaml
